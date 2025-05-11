@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import AddItemForm from "./components/AddItemForm";
-import WardrobeList from "./components/WardrobeList";
+import AddItemForm from './components/AddItemForm';
+import WardrobeList from './components/WardrobeList';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -14,8 +14,10 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "2rem", backgroundColor: "#fff", color: "#000" }}>
-      <h1>👕 ReClobba is running</h1>
+    <div style={{ padding: '2rem' }}>
+      <h1>👕 ReClobba</h1>
+      <AddItemForm addItem={addItem} />
+      <WardrobeList items={items} deleteItem={deleteItem} />
     </div>
   );
 }

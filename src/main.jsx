@@ -1,20 +1,16 @@
-import React, { useState } from "react";
-import AddItemForm from "./components/AddItemForm";
-import WardrobeList from "./components/WardrobeList";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import RedBox from 'redbox-react'
 
-function App() {
-  const [items, setItems] = useState([]);
+const e = new Error('boom')
+const box = <RedBox error={e} />
 
-  const addItem = (item) => {
-    setItems([...items, item]);
-  };
-
-  return (
-    <div>
-      <AddItemForm addItem={addItem} />
-      <WardrobeList items={items} />
-    </div>
-  );
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 export default App;
